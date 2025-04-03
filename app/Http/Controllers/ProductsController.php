@@ -10,7 +10,7 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($id)
+    public function index()
     {
         $products = product::all();
         
@@ -20,7 +20,9 @@ class ProductsController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
+
     {
+        return view('product.create');
         //
     }
 
@@ -29,13 +31,14 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $products = Products::all();
+        
         //
     }
-
     /**
      * Display the specified resource.
      */
-    public function show(Products $products)
+    public function show($id)
     {
         //
     }
@@ -51,7 +54,7 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Products $products)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -59,8 +62,9 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Products $products)
+    public function destroy($id)
     {
+        return view('Products.delete');
         //
     }
 }

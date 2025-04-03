@@ -12,14 +12,14 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('quantity')->default(0); // Add quantity column (Integer, required, default: 0)
+            $table->integer('quantity')->default(0); 
         });
     }
 
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('quantity'); // Drop the quantity column if rolled back
+            $table->dropColumn('quantity'); 
         });
     }
 };
